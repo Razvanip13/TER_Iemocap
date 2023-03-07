@@ -85,7 +85,7 @@ class KFoldLogMaster():
             file.write(f'> Recall: {np.mean(self.val_recall_list[-self.__folds:])} (+- {np.std(self.val_recall_list[-self.__folds:])})\n')
             file.write(f'> F1: {np.mean(self.val_f1_list[-self.__folds:])} (+- {np.std(self.val_f1_list[-self.__folds:])})\n')
             
-            if not is_regrgression:
+            if is_regrgression:
                 file.write(f'> CCC: {np.mean(self.val_ccc[-self.__folds:])} (+- {np.std(self.val_ccc[-self.__folds:])})\n')
             
             file.write(f'> Loss: {np.mean(self.losses_val[-self.__folds:])}\n')
@@ -98,7 +98,7 @@ class KFoldLogMaster():
             file.write(f'> Precision: {np.mean(self.test_precision_list[-self.__folds:])} (+- {np.std(self.test_precision_list[-self.__folds:])})\n')
             file.write(f'> Recall: {np.mean(self.test_recall_list[-self.__folds:])} (+- {np.std(self.test_recall_list[-self.__folds:])})\n')
             file.write(f'> F1: {np.mean(self.test_f1_list[-self.__folds:])} (+- {np.std(self.test_f1_list[-self.__folds:])})\n')
-            if not is_regression:
+            if is_regression:
                 file.write(f'> CCC: {np.mean(self.test_ccc[-self.__folds:])} (+- {np.std(self.test_ccc[-self.__folds:])})\n')
             file.write(f'> Loss: {np.mean(self.losses_test[-self.__folds:])}\n')
             
