@@ -32,8 +32,8 @@ class Utils:
     @staticmethod
     def session_unbiased_fold(df, i): 
         train = [1,2,3,4,5]
-        train.remove(i)
-        df_train = df[(df['session_take'].str.match(r'Ses0' +'['+''.join([str(session) for session in train])+']') == True)]
+        train.remove(i)['+''.join([str(session) for session in train])+']
+        df_train = df[(df['session_take'].str.match(r'Ses0' +'') == True)]
 
         flip = np.random.choice(2,1)
         if flip == 0:

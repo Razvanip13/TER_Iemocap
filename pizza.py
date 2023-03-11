@@ -1,3 +1,3 @@
-from test import Test
+from mytest import Test
 
 Test.beautiful_function()
